@@ -6,16 +6,16 @@
 </head>
 <body>
 <script>
-    let a = [7,11,5,-4,3,2,0,68,77,10];
-    let b = [1,2,-5,4,9,2,0,-13,17,16];
-    let c = Array();
-    let p = a.length + b.length;
-    for (let i = 0; i < p; i++) {
-        if(i<a.length){
-            c[i]=a[i];
-        }else c[i]=b[i-a.length];
+    let arrayFirst = [7, 11, 5, -4, 3, 2, 0, 68, 77, 10];
+    let arraySecond = [1, 2, -5, 4, 9, 2, 0, -13, 17, 16];
+    let arrayMix = Array();
+    let sumElement = arrayFirst.length + arraySecond.length;
+    for (let i = 0; i < sumElement; i++) {
+        if (i < arrayFirst.length) {
+            arrayMix[i] = arrayFirst[i];
+        } else arrayMix[i] = arraySecond[i - arrayFirst.length];
     }
-    alert(c);
+    console.log(arrayMix);
 </script>
 </body>
 </html>
