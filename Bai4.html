@@ -5,41 +5,62 @@
     <title>Bai4</title>
 </head>
 <body>
-<input type="number" id="inputElement">
-<button type="button" id="btnAdd" onclick="add_array()" >Add</button>
-<button type="button" id="btnDisplay" onclick="display_array()" >Display</button>
-<button type="button" id="btnReverse" onclick="reverse_array()" >Reverse</button>
+<!--<input type="text" id="inputElement">-->
+<!--<button type="button" id="btnConvert" onclick="convertString()" >Convert</button>-->
+<!--<button type="button" id="btnAdd" onclick="add_array()" >Add</button>-->
+<!--<button type="button" id="btnDisplay" onclick="display_array()" >Display</button>-->
+<!--<button type="button" id="btnReverse" onclick="reverse_array()" >Reverse</button>-->
 
 
-<div id="result"></div>
+<!--<div id="result"></div>-->
 <script>
-let x = 0;
-let array = Array();
-function add_array(){
-    array[x] = document.getElementById("inputElement").value;
-    x++;
-    document.getElementById("inputElement").value="";
-}
-function display_array() {
-    let e = "<hr>";
-    for (let i = 0; i <array.length; i++) {
-        e+= array[i] + "<br>";
-    }
-    document.getElementById("result").innerHTML = e;
+    // let arr = [];
+    // let inputBox = document.getElementById("inputElement");
+    // function convertString() {
+    //     arr = inputBox.value.split(',');
+    //     console.log(arr);
+    // }
+    // c1
+    // let arr = [];
+    // let input = 0;
+    // function pushNumber() {
+    //     do {
+    //         input = prompt("nhap vao day");
+    //         if(input != 'ok'){
+    //             arr.push(input);
+    //         }
+    //     } while (input != 'ok');
+    // }console.log(arr);
+    // pushNumber();
 
-}
-function reverse_array() {
-    let first = 0;
-    let last = array.length - 1;
-    while (first<last){
-        let change = array[first];
-        array[first] = array[last];
-        array[last] = change;
-        first++;
-        last--;
+    let input = prompt("Nhap: ");
+    let arr = [];
+    arr = input.split(',');
+    console.log(input.split(','));
+    //arr.reverse();
+    // function reverseElement( ){
+    //     let first = 0;
+    //     let last = arr.length - 1;
+    //     while (first < last) {
+    //         let arrRevert = arr[first];
+    //         arr[first] = arr[last];
+    //         arr[last] = arrRevert;
+    //         first++;
+    //         last--;
+    //     }
+    // }
+    function reverseOne(arr) {
+        let temp;
+        for (let i = 0; i < arr.length / 2; i++) {
+            temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
     }
-    document.getElementById("result").innerHTML = array;
-}
+
+    //reverseElement();
+    reverseOne(arr);
+    console.log(arr);
 </script>
 </body>
 </html>
